@@ -5,3 +5,4 @@ Currently includes:
 * vim
 * conky
 * i3
+* dunst
