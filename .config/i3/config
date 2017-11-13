@@ -239,7 +239,7 @@ exec --no-startup-id dunst -config ~/.dunstrc
 exec --no-startup-id xautolock -time 3 -locker ~/bin/lockscreen.sh -notifier 'notify-send "Screen locking in 15 secs" && sudo beep' -notify 15
 
 # start syncthing
-exec --no-startup-id syncthing -no-browser -home="~/.config/syncthing"
+exec --no-startup-id syncthing -no-browser -home=".config/syncthing"
 
 # start non daemons
 #exec --no-startup-id i3-msg 'exec /usr/bin/pidgin'
