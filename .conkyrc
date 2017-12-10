@@ -70,10 +70,8 @@ TEXT
 #/home ${fs_free /home} | \
 # Free space on /
 /dev/sda1 ${fs_free /} | \
-# Ethernet status
-enp0s25 ${addr enp0s25} | \
-# Wifi status
-wlp3s0 ${addr wlp3s0} | \
+# Interfaces status
+${exec ip -o addr | awk '{split($4, a, "/"); print $2" "a[1]}' | grep -v lo | awk 1 ORS=' | '}\
 # CPU stats
 CPU ${cpu cpu1}% ${freq_g 1}GHz ${exec sensors | grep -m 1 "Core 0"|awk '{print $3}'} | \
 # RAM in use
