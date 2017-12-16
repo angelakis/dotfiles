@@ -81,6 +81,6 @@ ${time %a %d.%m.%y} ${time %H:%M} | \
 #Vol: ${mixer}
 Vol ${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($5 == "off"){print 0}else if($2 <=50){print $2}else{print $2}}' | tail -n 1}% | \
 # Battery %
-Batt ${battery_percent BAT0}% (${exec acpi -b | grep -P -o '[CD]'}) | \
+Batt ${battery_percent BAT0}% (${exec acpi -b | head -n 1 | grep -P -o '[CD]'}) | \
 # Current keyboard Language
 ${exec xkblayout-state print "%s"}
