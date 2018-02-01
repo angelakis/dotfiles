@@ -42,6 +42,7 @@ nnoremap <C-H> <C-W><C-H>
 "set cursorline
 set wildmenu
 set showmatch
+set spell spelllang=en,el
 
 " write easier in greek
 set keymap=greek_utf-8
