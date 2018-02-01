@@ -1,6 +1,23 @@
+set nocompatible
+filetype off
+
+" Vundle part
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'python-mode/python-mode'
+
+call vundle#end()
+filetype plugin indent on
+
 syntax enable
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 set autoindent
@@ -8,8 +25,6 @@ set smartindent
 
 set hidden
 set showcmd
-
-set nocompatible
 
 colorscheme ron
 
@@ -27,3 +42,8 @@ nnoremap <C-H> <C-W><C-H>
 "set cursorline
 set wildmenu
 set showmatch
+
+" write easier in greek
+set keymap=greek_utf-8
+set iminsert=0
+set imsearch=-1
