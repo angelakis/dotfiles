@@ -5,9 +5,6 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 ZSH_THEME="ys"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
@@ -17,7 +14,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git autojump sudo systemadmin systemd archlinux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,8 +28,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias getsize=du -hs
-
-[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
 export VISUAL=vim
 export EDITOR=vim
