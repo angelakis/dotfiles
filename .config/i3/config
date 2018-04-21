@@ -224,6 +224,9 @@ bindsym $mod+Pause mode "$mode_system"
 
 bindsym $mod+t exec --no-startup-id xautolock -toggle
 
+# Map escape to caps lock
+setxkbmap -option caps:escape
+
 # Execute network manager tray icon
 exec --no-startup-id nm-applet
 
