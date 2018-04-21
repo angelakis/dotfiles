@@ -14,7 +14,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump sudo systemadmin systemd archlinux)
+plugins=(git autojump sudo systemadmin systemd archlinux bgnotify)
 
 source $ZSH/oh-my-zsh.sh
 
