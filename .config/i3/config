@@ -224,17 +224,14 @@ bindsym $mod+Pause mode "$mode_system"
 
 bindsym $mod+t exec --no-startup-id xautolock -toggle
 
-# Map escape to caps lock
-setxkbmap -option caps:escape
-
 # Execute network manager tray icon
 exec --no-startup-id nm-applet
 
 # Random bg feh
 exec --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
 
-# Change language with alt-shift
-exec --no-startup-id "setxkbmap -model pc105 -layout us,gr -option grp:alt_shift_toggle"
+# Change language with alt-shift and map escape to caps lock
+exec --no-startup-id "setxkbmap -model pc105 -layout us,gr -option grp:alt_shift_toggle -option caps:escape"
 
 # start compton to stop screen tearing
 exec --no-startup-id compton -b
