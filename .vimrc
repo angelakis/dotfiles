@@ -11,12 +11,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
+Plugin 'tmhedberg/SimplyFold'
 " Plugin 'python-mode/python-mode'
 
 call vundle#end()
 filetype plugin indent on
 
-syntax enable
+let python_highlight_all=1
+syntax on
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -26,6 +28,21 @@ set smartindent
 
 set hidden
 set showcmd
+
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
+let mapleader=" "
+
+let g:SimpylFold_docstring_preview=1
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
 
 colorscheme ron
 
