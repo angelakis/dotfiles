@@ -93,3 +93,14 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+" Vdebug
+let g:vdebug_keymap = {
+ \    "run" : "<F1>",
+ \    "run_to_cursor" : "<F8>",
+ \    "step_over" : "<F6>",
+ \    "step_into" : "<F5>",
+ \    "step_out" : "<F7>",
+ \    "close" : "<F2>",
+ \    "detach" : "<F3>"
+ \}
