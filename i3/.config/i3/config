@@ -250,8 +250,8 @@ exec --no-startup-id dockd --daemon
 
 # start non daemons
 #exec --no-startup-id i3-msg 'exec /usr/bin/pidgin'
-exec --no-startup-id i3-msg 'workspace number 1 $w1; exec /usr/bin/xfce4-terminal -e weechat'
+#exec --no-startup-id i3-msg 'workspace number 1 $w1; exec /usr/bin/xfce4-terminal -e weechat'
 exec --no-startup-id i3-msg 'rename workspace 1 to "1 chat"'
-exec --no-startup-id i3-msg 'workspace number 8 $w8; exec --no-startup-id ~/builds/thunderbird/thunderbird'
+#exec --no-startup-id i3-msg 'workspace number 8 $w8; exec --no-startup-id ~/builds/thunderbird/thunderbird'
 exec --no-startup-id i3-msg 'workspace number 2 $w2; exec --no-startup-id nightfox'
 #exec --no-startup-id i3-msg 'exec --no-startup-id /usr/bin/keepassxc'

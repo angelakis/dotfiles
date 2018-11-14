@@ -8,11 +8,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
-Plugin 'tmhedberg/SimplyFold'
-" Plugin 'python-mode/python-mode'
+Plugin 'vimwiki/vimwiki'
+Plugin 'rust-lang/rust.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()
 filetype plugin indent on
@@ -35,13 +39,20 @@ nnoremap <space> za
 
 let mapleader=" "
 
-let g:SimpylFold_docstring_preview=1
+map <leader>j :e#<CR>
 
+" YCM config
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" Nerd tree config
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" fzf shortcuts
+map <leader>f :Files<CR>
+map <leader>c :Commits<CR>
+map <leader>h :History<CR>
 
 
 colorscheme ron
@@ -104,3 +115,13 @@ let g:vdebug_keymap = {
  \    "close" : "<F2>",
  \    "detach" : "<F3>"
  \}
+
+" Syntastic options
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
