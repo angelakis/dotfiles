@@ -23,8 +23,8 @@ filetype plugin indent on
 
 let python_highlight_all=1
 syntax on
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 set autoindent
@@ -35,11 +35,15 @@ set showcmd
 
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za
+
+colorscheme ron
 
 let mapleader=" "
 
+" Buffer shortcuts
 map <leader>j :e#<CR>
+map <leader>n :bnext<CR>
+map <leader>p :bprev<CR>
 
 " YCM config
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -51,11 +55,9 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " fzf shortcuts
 map <leader>f :Files<CR>
-map <leader>c :Commits<CR>
+map <leader>l :Lines<CR>
 map <leader>h :History<CR>
 
-
-colorscheme ron
 
 " force good habits
 map <up> <nop>
@@ -71,6 +73,10 @@ nnoremap <C-H> <C-W><C-H>
 "set cursorline
 set wildmenu
 set showmatch
+
+"set splits
+set splitbelow
+set splitright
 
 " write easier in greek
 set keymap=greek_utf-8
@@ -116,6 +122,16 @@ let g:vdebug_keymap = {
  \    "detach" : "<F3>"
  \}
 
+" python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
 " Syntastic options
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -125,3 +141,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+nnoremap <C-w>E :SyntasticToggleMode<CR> :SyntasticCheck<CR>
