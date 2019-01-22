@@ -1,11 +1,11 @@
 My dotfiles
 
-Currently includes:
+Currently included:
 
 * vim
-* conky
-* i3
+* i3-gaps
 * dunst
 * zsh
+* polybar
 
 The files are managed using GNU Stow.
