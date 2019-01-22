@@ -4,7 +4,7 @@
     bounce_freq = 0
     browser = nightfox
     dmenu = /usr/bin/dmenu -p dunst:
-    follow = none
+    follow = keyboard
     font = Terminus (TTF) 12
     format = "<b>%s</b>\n%b"
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
