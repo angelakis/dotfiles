@@ -1,5 +1,5 @@
 [bar/top]
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:DP-1}
 width = 100%
 height = 26
 
@@ -20,9 +20,9 @@ font-2 = Misc Termsyn.Icons:size=8:antialias=false;-2
 font-3 = Font Awesome 5 Free:style=Solid:size=10;0
 font-4 = Font Awesome 5 Brands:style=Regular:size=10;0
 
-modules-right = keyboard pulseaudio filesystem wireless-network wired-network wired-speed battery memory cpu temperature
+modules-right = keyboard pulseaudio filesystem wireless-network wireless-speed wired-network wired-speed battery memory cpu temperature
 modules-center = date
-modules-left = i3
+modules-left = i3 spotify
 
 separator = |
 
@@ -177,12 +177,20 @@ type = internal/network
 interface = enp1s0
 interval = 3.0
 
-label-connected =  %{T3}%local_ip%%{T-}
+label-connected =  %local_ip%
 label-disconnected-foreground = #66
 
 [module/wired-speed]
 type = internal/network
 interface = enp1s0
+interval = 3.0
+
+label-connected =   %downspeed%
+label-disconnected-foreground = #66
+
+[module/wireless-speed]
+type = internal/network
+interface = wlp2s0
 interval = 3.0
 
 label-connected =   %downspeed%
@@ -203,5 +211,13 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = /home/sevsp/.config/polybar/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
 
 ; vim:ft=dosini
