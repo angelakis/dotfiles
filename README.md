@@ -7,5 +7,6 @@ Currently included:
 * dunst
 * zsh
 * polybar
+* kitty
 
 The files are managed using GNU Stow.
