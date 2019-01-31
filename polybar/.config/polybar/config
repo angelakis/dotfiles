@@ -14,25 +14,25 @@ padding-right = 2
 module-margin = 1
 underline-size = 2
 
-font-0 = Inconsolata:style=Bold:size=10;-1
+font-0 = Inconsolata:style=Bold:size=8;-1
 font-1 = MaterialIcons:size=10;0
 font-2 = Misc Termsyn.Icons:size=8:antialias=false;-2
 font-3 = Font Awesome 5 Free:style=Solid:size=10;0
 font-4 = Font Awesome 5 Brands:style=Regular:size=10;0
 
-modules-right = keyboard pulseaudio filesystem wireless-network wireless-speed wired-network wired-speed battery memory cpu temperature
+modules-right = keyboard pulseaudio filesystem wireless-network wired-network backlight battery memory cpu temperature
 modules-center = date
-modules-left = i3 spotify
+modules-left = i3 spotify check-reboot
 
 separator = |
 
-; [module/backlight]
-; type = internal/xbacklight
-; format = <ramp>
+[module/backlight]
+type = internal/xbacklight
+format = <ramp>
 
-; ramp-0 = 
-; ramp-1 = 
-; ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 
 [module/temperature]
 type = internal/temperature
@@ -67,7 +67,7 @@ format-charging = <animation-charging> <label-charging>
 label-charging = %percentage:3%%
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage:3%%
-format-full = <ramp-capacity><label-full>
+format-full = <ramp-capacity> <label-full>
 label-full = %percentage:3%%
 
 ramp-capacity-0 = 
@@ -217,7 +217,14 @@ type = custom/script
 interval = 1
 format-prefix = " "
 format = <label>
-exec = /home/sevsp/.config/polybar/spotify_status.py -f '{artist}: {song}'
+exec = python ~/git/polybar-spotify/spotify_status.py -f '{artist}: {song}'
 format-underline = #1db954
+
+[module/check-reboot]
+type = custom/script
+interval = 30
+format = <label> 
+exec = ~/.config/polybar/check-reboot
+format-underline = #f53c3c
 
 ; vim:ft=dosini
